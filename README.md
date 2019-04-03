@@ -66,11 +66,11 @@ p2pnapC.once("error",(error)=>{
   console.error("Client error",error);
   process.exit(1);
 });
-/* create server for incomming connection for channel on channel local port so we can accept 
-incomming connections form peers for our channel
+/* create server for incoming connection for channel on channel local port so we can accept 
+incoming connections form peers for our channel
 */
 var server = net.createServer((sock)=>{
-  console.log("incomming peer connection",sock.remoteAddress);
+  console.log("incoming peer connection",sock.remoteAddress);
   sock.on("data",(data)=>{
     console.log("received",data.toString(),"from peer");
     sock.write("You said: '"+data.toString()+"'");
