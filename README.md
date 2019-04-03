@@ -56,10 +56,8 @@ p2pnapC.on("address",(addr,port,lts)=>{
    peer.write("hello");
    /// add peer to list in you application
  });
- peer.once("data",(data)=>{
+ peer.on("data",(data)=>{
    console.log(data.toString());
-   console.log("peer test success");
-   process.exit(0);
  });
  peer.once("error",(err)=>{
    console.log("peer connection error",err);
