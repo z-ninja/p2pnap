@@ -29,19 +29,6 @@ const net = require("net");
 var channel_local_port = 8001;
 var service_address = "b248bb9a1202b245...onion"; // Network access point server address
 var sevice_port = 80; // Network access point server port
-/// create server for incomming connection for channel on channel local port
-var server = net.createServer((sock)=>{
-  console.log("incomming peer connection",sock.remoteAddress);
-  sock.on("data",(data)=>{
-    console.log("received",data.toString(),"from peer");
-    sock.write("You said: '"+data.toString()+"'");
-  });
-  sock.once("error",()=>{
-  });
-  sock.once("close",()=>{
-  });
-});
-server.listen(channel_local_port,"localhost");
 /// create client
  var p2pnapC = p2pnapClient({
   dataDir:path.join(__dirname,"client-data"),
@@ -77,4 +64,17 @@ p2pnapC.once("error",(error)=>{
   console.error("Client error",error);
   process.exit(1);
 });
+/// create server for incomming connection for channel on channel local port so we can accept incomming connections for our channel
+var server = net.createServer((sock)=>{
+  console.log("incomming peer connection",sock.remoteAddress);
+  sock.on("data",(data)=>{
+    console.log("received",data.toString(),"from peer");
+    sock.write("You said: '"+data.toString()+"'");
+  });
+  sock.once("error",()=>{
+  });
+  sock.once("close",()=>{
+  });
+});
+server.listen(channel_local_port,"localhost");
 ```
