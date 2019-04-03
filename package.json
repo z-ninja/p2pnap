@@ -1,0 +1,23 @@
+{
+  "name": "p2pnap",
+  "version": "1.0.0",
+  "description": "Peer-To-Peer Network Access Point",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./tests/test.js"
+  },
+  "dependencies": {
+  "@stablelib/ed25519":">=0.7.2",
+  "@deadcanaries/granax":">=3.1.5",
+  "socks5-client":">=1.2.6",
+  "moment-timezone":">=0.5.23",
+  "rfc-3548-b32":">=0.0.2",
+  "js-sha3":">=0.8.0",
+  "tweetnacl":">=1.0.1",
+  "tweetnacl-util":">=0.15.0",
+  "sqlite3":">=4.0.6"
+  },
+  "keywords": [],
+  "author": "z",
+  "license": "MIT"
+}
