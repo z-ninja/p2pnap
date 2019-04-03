@@ -82,3 +82,8 @@ var server = net.createServer((sock)=>{
 });
 server.listen(channel_local_port,"localhost");
 ```
+
+Install
+```javascript
+npm i p2pnap
+```
