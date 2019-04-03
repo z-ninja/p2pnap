@@ -4,7 +4,7 @@ Peer-to-Peer Network Access Point
 This project allows you to create Network Access Point server and use client to connect to the server to discover other peers in network interesting in a same channel name easily.
 Whole communication is done via tor network with extra encryption layer for discovery, but
 peer communication does not have extra encryption layer, you can define it to fit your needs.
-Since Tor supports only TCP, this project is limited to TCP communication only.
+Since Tor support only TCP, so this project is limited to TCP communication only.
 
 
 Server Example
